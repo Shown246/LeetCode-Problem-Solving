@@ -10,8 +10,8 @@ public class Main {
 //        for(int i = 0; i < arr.length; i++){
 //            nums[i] = Integer.parseInt(arr[i]);
 //        }
-        RomantoInteger solution = new RomantoInteger();
-        int k = solution.romanToInt(str);
+        LengthofLastWord solution = new LengthofLastWord();
+        int k = solution.lengthOfLastWord(str);
         System.out.println(k);
 //        for (int i = 0; i < k; i++) {
 //            System.out.print(nums[i]);
