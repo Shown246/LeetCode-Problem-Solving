@@ -6,8 +6,8 @@ public class Main {
         String str = in.nextLine();
         String str2 = in.nextLine();
 
-        IsSubsequence solution = new IsSubsequence();
-        boolean ans = solution.isSubsequence(str,str2);
+        RansomNote solution = new RansomNote();
+        boolean ans = solution.canConstruct(str,str2);
         System.out.println(ans);
 //        for (int i = 0; i < k; i++) {
 //            System.out.print(nums1[i]);
