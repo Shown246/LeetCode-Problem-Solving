@@ -1,19 +1,21 @@
+import java.util.LinkedList;
 import java.util.Objects;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        Integer[] values = {1,3};
-        Integer[] values2= {1,1,2};
+        Integer[] values = {1,2,2,null,3,null,3};
 
         // Create the binary tree
-        TreeNode p = createBinaryTree(values,0);
-        TreeNode q = createBinaryTree(values2, 0);
-        SameTree solution = new SameTree();
+        TreeNode root = createBinaryTree(values,0);
+        SymmetricTree solution = new SymmetricTree();
+        assert root != null;
+        boolean ans = solution.isSymmetric(root);
+        //printTree(root);
 
-        boolean ans = solution.isSameTree(p,q);
         System.out.println(ans);
     }
     private static TreeNode createBinaryTree(Integer[] values) {
@@ -33,5 +35,19 @@ public class Main {
         }
 
         return null;
+    }
+
+    private static void printTree(TreeNode root){
+        //Print tree in level order traversal
+        Queue<TreeNode> E = new LinkedList<>();
+        E.add(root);
+        while (!E.isEmpty()){
+            TreeNode treeNode = E.poll();
+            System.out.print(treeNode.val+",");
+            if (treeNode.left!=null)
+                E.add(treeNode.left);
+            if (treeNode.right != null)
+                E.add(treeNode.right);
+        }
     }
 }
