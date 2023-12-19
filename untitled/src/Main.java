@@ -7,13 +7,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        Integer[] values = {1,2,2,null,3,null,3};
+        Integer[] values = {5,4,8,11,null,13,4,7,2,null,null,null,1};
 
         // Create the binary tree
         TreeNode root = createBinaryTree(values,0);
-        SymmetricTree solution = new SymmetricTree();
+        PathSum solution = new PathSum();
+        int targetSum = 22;
         assert root != null;
-        boolean ans = solution.isSymmetric(root);
+        boolean ans = solution.hasPathSum(root,targetSum);
         //printTree(root);
 
         System.out.println(ans);
